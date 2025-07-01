@@ -5,12 +5,6 @@ import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
 
-type Params = {
-  params: {
-    slug: string;
-  };
-};
-
 export async function generateStaticParams() {
   const files = fs.readdirSync(path.join(process.cwd(), 'episodes'));
   return files
@@ -20,7 +14,7 @@ export async function generateStaticParams() {
     }));
 }
 
-export default async function Page({ params }: Params) {
+export default async function Page({ params }: { params: { slug: string } }) {
   const { slug } = params;
   const filePath = path.join(process.cwd(), 'episodes', `${slug}.md`);
   const file = fs.readFileSync(filePath, 'utf-8');
