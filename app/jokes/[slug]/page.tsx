@@ -4,19 +4,21 @@ import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
-import { PageProps } from '@/.next/types/app/page';
+
+type Props = {
+  params: Promise<{ slug: string }>;
+};
 
 export async function generateStaticParams() {
   const files = fs.readdirSync(path.join(process.cwd(), 'episodes'));
-  return files
-    .filter((file) => file.endsWith('.md'))
-    .map((file) => ({
-      slug: file.replace('.md', ''),
-    }));
+  return files.map((file) => ({
+    slug: file.replace('.md', ''),
+  }));
 }
 
-export default async function Page({ params }: PageProps) {
-  const { slug } = await params;
+export default async function Page(props: Props) {
+  const { slug } = await props.params;
+
   const filePath = path.join(process.cwd(), 'episodes', `${slug}.md`);
   const file = fs.readFileSync(filePath, 'utf-8');
   const { content, data } = matter(file);
