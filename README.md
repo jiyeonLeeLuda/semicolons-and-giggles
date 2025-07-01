@@ -67,8 +67,11 @@ _“npm install love && git commit -m 'because life is debugged with humor'”_
 `/jokes` 폴더에 에피소드별로 정리되어 있어요:
 
 - `01-origin-jokes.md`: 모든 것의 전설적인 시작
-- `02-exid-semicolon.md`: 스타일리시한 퇴장과 감정 구문분석## 🔄 언젠가 업데이트 될까요?
-  네, 기대하셔도 좋습니다. 약속은 남발했으니 언젠간 쓰게 되겠죠?
+- `02-exid-semicolon.md`: 스타일리시한 퇴장과 감정 구문분석
+
+## 🔄 언젠가 업데이트 될까요?
+
+네, 기대하셔도 좋습니다. 약속은 남발했으니 언젠간 쓰게 되겠죠?
 
 - `bowel-series.md`: 장 트러블 테마 농담
 - `frontend-love.md`: HTML과 이별이 만나는 곳
